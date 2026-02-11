@@ -2,7 +2,7 @@
 Data Preprocessing & Utility Functions
 Supports the Career Dashboard with data processing and analysis functions
 """
-
+from datasets import load_dataset
 import pandas as pd
 import numpy as np
 from collections import Counter
@@ -317,7 +317,9 @@ class TransitionPathFinder:
 # Example usage
 if __name__ == "__main__":
     # Load and process data
-    df = pd.read_csv('data/SGJobData.csv', on_bad_lines='skip')
+    # df = pd.read_csv('data/SGJobData.csv', on_bad_lines='skip')
+    ds = load_dataset("eshern/careerpath-data", data_files="SGJobData.csv")
+    df = ds["train"].to_pandas()
     df = DataProcessor.process_data(df)
     
     # Example: Get skills for a role
