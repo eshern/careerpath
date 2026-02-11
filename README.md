@@ -553,7 +553,7 @@ This dashboard is designed for career development purposes. Use insights respons
 
 - [ ] Read Business Objectives section
 - [ ] Install Python 3.8+
-- [ ] Install dependencies: `pip install -r requirements.txt`
+- [ ] Install dependencies: `conda env create -f environment.yml`
 - [ ] Place SGJobData.csv in project folder
 - [ ] Run: `streamlit run dashboard.py`
 - [ ] Visit http://localhost:8501
