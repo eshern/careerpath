@@ -15,7 +15,8 @@ APP_DESCRIPTION = "Data-driven insights for personalized career progression"
 # DATA SETTINGS
 # ============================================================================
 
-DATA_FILE = "data/SGJobData.csv"
+# DATA_FILE = "data/SGJobData.csv"
+DATA_FILE = "hf://datasets/eshern/careerpath-data/SGJobData.csv"
 CACHE_ENABLED = True
 CACHE_TTL = 3600  # 1 hour in seconds
 
