@@ -12,7 +12,7 @@ Target Users:
 - Mid-career professionals (3-10 years)
 - Career switchers/transitioning professionals
 """
-from datasets import load_dataset
+# from datasets import load_dataset
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -74,12 +74,13 @@ def load_data():
     """Load and preprocess the job data"""
 
     # csv_path = "data/SGJobData.csv"
+    csv_path = "hf://datasets/eshern/careerpath-data/SGJobData.csv"
     
     try:
-        ds = load_dataset("eshern/careerpath-data", data_files="SGJobData.csv")
-        df = ds["train"].to_pandas()
+        # ds = load_dataset("eshern/careerpath-data", data_files="SGJobData.csv")
+        # df = ds["train"].to_pandas()
 
-        # df = pd.read_csv(csv_path, on_bad_lines='skip')
+        df = pd.read_csv(csv_path, on_bad_lines='skip')
         
         # Data cleaning
         df['minimumYearsExperience'] = pd.to_numeric(df['minimumYearsExperience'], errors='coerce').fillna(0).astype(int)
